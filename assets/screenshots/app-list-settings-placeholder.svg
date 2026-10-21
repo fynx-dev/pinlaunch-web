@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-labelledby="title description">
+  <title id="title">Application list settings screenshot placeholder</title>
+  <desc id="description">A reserved area for a future PinLaunch application list settings screenshot.</desc>
+  <rect width="1200" height="750" fill="#172536"/>
+  <rect x="62" y="62" width="1076" height="626" fill="none" stroke="#66809c" stroke-width="2" stroke-dasharray="10 13"/>
+  <path d="M186 280h104M186 370h104M186 460h104" fill="none" stroke="#1674d1" stroke-width="26"/>
+  <path d="M348 280h546M348 370h444M348 460h600" fill="none" stroke="#3c5167" stroke-width="27"/>
+  <path d="M186 550h762" fill="none" stroke="#3c5167" stroke-width="2"/>
+  <text x="600" y="148" fill="#b8c8d8" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" letter-spacing="4" text-anchor="middle">PRODUCT SCREENSHOT</text>
+  <text x="600" y="630" fill="#7f96ad" font-family="Segoe UI, sans-serif" font-size="20" text-anchor="middle">Application list settings — coming soon</text>
+</svg>
