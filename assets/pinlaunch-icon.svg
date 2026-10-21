@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">PinLaunch</title>
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="#fff"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 17h34M15 27h34M15 37h34" stroke="#666e78" stroke-width="5"/>
+    <path d="M15 47h34" stroke="#1674d1" stroke-width="5"/>
+  </g>
+</svg>
