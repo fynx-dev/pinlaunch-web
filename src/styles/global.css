@@ -29,8 +29,10 @@ h1, h2, h3 { font-family: var(--display); letter-spacing: -.065em; line-height: 
 h1 { margin-bottom: 0; font-size: clamp(2.35rem, 4.65vw, 4.25rem); }
 h2 { margin-bottom: 0; font-size: clamp(1.95rem, 3.45vw, 3.2rem); }
 h3 { margin-bottom: 0; }
-html[lang="zh-CN"] .hero h1 { font-size: clamp(2.25rem, 3.9vw, 3.45rem); }
-html[lang="zh-CN"] .hero h1 em { white-space: nowrap; }
+.hero h1 { white-space: nowrap; }
+html[lang="en"] .hero h1 { font-size: clamp(1.6rem, 2.75vw, 2.65rem); }
+html[lang="ja"] .hero h1 { font-size: clamp(1.6rem, 2.65vw, 2.45rem); }
+html[lang="zh-CN"] .hero h1 { font-size: clamp(2rem, 3.5vw, 3.1rem); }
 .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
 .skip-link { position: fixed; z-index: 20; top: .75rem; left: .75rem; padding: .6rem .9rem; color: var(--paper); background: var(--ink); transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
