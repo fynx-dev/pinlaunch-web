@@ -7,7 +7,7 @@ if (root) {
   const menu = root.querySelector<HTMLElement>("#pinlaunch-demo-menu");
   const toggle = root.querySelector<HTMLButtonElement>("[data-demo-toggle]");
   const close = root.querySelector<HTMLButtonElement>("[data-demo-close]");
-  const selection = root.querySelector<HTMLElement>(".demo-selection");
+  const selection = root.querySelector<HTMLElement>(".demo-toast");
   const items = [...root.querySelectorAll<HTMLButtonElement>("[data-demo-item]")];
 
   const setOpen = (open: boolean) => {

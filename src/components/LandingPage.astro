@@ -54,8 +54,8 @@ const demoApps = [
           <div class="menu-list">
             {demoApps.map(([name, icon]) => <button class="menu-app" type="button" role="menuitem" data-demo-item><img src={asset(icon)} width="19" height="19" alt="" /><span>{name}</span></button>)}
           </div>
-          <p class="demo-selection" aria-live="polite"></p>
         </div>
+        <p class="demo-toast" role="status" aria-live="polite"></p>
         <div class="demo-taskbar"><button class="taskbar-launch is-active" type="button" data-demo-toggle aria-expanded="true" aria-controls="pinlaunch-demo-menu" aria-label={content.hero.openMenu}><img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" /></button></div>
       </div>
     </div>
