@@ -34,7 +34,7 @@ export const locales: Record<LocaleCode, LocaleContent> = {
       availability: "Public download will be available after Microsoft Store certification.", platform: "Windows 10 version 1809+ and Windows 11, x64.",
       points: ["Works offline", "English, Japanese, and Simplified Chinese", "No account required"], demoLabel: "Interactive PinLaunch taskbar menu demonstration", openMenu: "Open the PinLaunch demo menu", closeMenu: "Close the demo menu", menuTitle: "PinLaunch demo menu"
     },
-    strip: ["Windows apps", "Folders & documents", "Websites & commands", "Chrome · Edge · Firefox PWAs"],
+    strip: ["Windows apps", "Folders & documents", "Websites & commands", "Chrome · Edge PWAs"],
     problem: {
       eyebrow: "A tidier taskbar. A clearer start.", title: "Keep icons light.\nStop digging through Start.",
       lead: "A full taskbar takes space. A full Start menu makes you search. PinLaunch keeps only the destinations you chose, right where you expect them.",
@@ -81,7 +81,7 @@ export const locales: Record<LocaleCode, LocaleContent> = {
       availability: "Microsoft Store の認定後に公開ダウンロードを提供予定です。", platform: "Windows 10 バージョン 1809 以降、Windows 11、x64 に対応。",
       points: ["オフラインで利用可能", "英語・日本語・簡体字中国語に対応", "アカウント不要"], demoLabel: "操作できる PinLaunch タスクバーメニューのデモ", openMenu: "PinLaunch のデモメニューを開く", closeMenu: "デモメニューを閉じる", menuTitle: "PinLaunch デモメニュー"
     },
-    strip: ["Windows アプリ", "フォルダーと文書", "Web サイトとコマンド", "Chrome · Edge · Firefox PWA"],
+    strip: ["Windows アプリ", "フォルダーと文書", "Web サイトとコマンド", "Chrome · Edge PWA"],
     problem: {
       eyebrow: "すっきりしたタスクバー。迷わないスタート。", title: "アイコンを増やしすぎず、\nスタートメニューを探し回らない。",
       lead: "タスクバーがいっぱいだと場所を取り、スタートメニューが長いと探す手間がかかります。PinLaunch には、あなたが選んだよく使う項目だけを残せます。",
@@ -128,7 +128,7 @@ export const locales: Record<LocaleCode, LocaleContent> = {
       availability: "将在通过 Microsoft Store 认证后提供公开下载。", platform: "适用于 Windows 10 1809 及更高版本和 Windows 11，仅限 x64。",
       points: ["离线可用", "支持英文、日语与简体中文", "无需账号"], demoLabel: "可交互的 PinLaunch 任务栏菜单演示", openMenu: "打开 PinLaunch 演示菜单", closeMenu: "关闭演示菜单", menuTitle: "PinLaunch 演示菜单"
     },
-    strip: ["Windows 应用", "文件夹与文档", "网站与命令", "Chrome · Edge · Firefox PWA"],
+    strip: ["Windows 应用", "文件夹与文档", "网站与命令", "Chrome · Edge PWA"],
     problem: {
       eyebrow: "任务栏更清爽，查找更直接", title: "别让图标堆满，\n也别在开始菜单里翻找。",
       lead: "任务栏塞满固定图标会占据空间；开始菜单又囊括所有已安装应用。PinLaunch 只保留你指定、真正常用的入口。",
