@@ -62,8 +62,8 @@ html[lang="zh-CN"] .hero h1 { font-size: clamp(2rem, 3.5vw, 3.1rem); }
 .hero-points { display: flex; flex-wrap: wrap; gap: .4rem 1.15rem; margin: 1.9rem 0 0; padding: 1.75rem 0 0; border-top: 1px solid var(--rule); color: #405064; font-size: .82rem; font-weight: 700; list-style: none; }
 .hero-points li::before { margin-right: .4rem; color: var(--blue); content: "✓"; }
 
-.stage { position: relative; min-height: 460px; overflow: hidden; border-radius: 16px; background: linear-gradient(145deg, #dce8f0, #b9cbd8 58%, #94afc1); box-shadow: var(--shadow); transform: rotate(1.1deg); }
-.stage::before { position: absolute; inset: 12% 9% 19%; opacity: .58; background: linear-gradient(90deg, transparent calc(50% - 1px), rgb(255 255 255 / 64%) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(0deg, transparent calc(50% - 1px), rgb(255 255 255 / 64%) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(145deg, rgb(255 255 255 / 26%), transparent 58%); content: ""; }
+.stage { position: relative; min-height: 460px; overflow: hidden; border-radius: 16px; background: linear-gradient(145deg, #e5f0f7, #b6cddd 68%, #99b8ca); box-shadow: var(--shadow); transform: rotate(1.1deg); }
+.stage::before { position: absolute; inset: 13% 10% 19%; opacity: .5; background: linear-gradient(90deg, transparent calc(50% - 1px), rgb(255 255 255 / 82%) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(0deg, transparent calc(50% - 1px), rgb(255 255 255 / 82%) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)); content: ""; }
 .stage::after { position: absolute; z-index: 0; right: 0; bottom: 0; left: 0; height: 67px; background: rgb(24 28 32 / 84%); backdrop-filter: blur(18px); content: ""; }
 .launcher { position: absolute; z-index: 2; bottom: 79px; left: 50%; width: min(calc(100% - 64px), 390px); overflow: hidden; border-radius: 11px; color: var(--panel-text); background: var(--panel); box-shadow: 0 24px 50px rgb(6 11 15 / 34%); transform: translateX(-50%); transform-origin: bottom center; }
 .launcher[hidden] { display: none; }
