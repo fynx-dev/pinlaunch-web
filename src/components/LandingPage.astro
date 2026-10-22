@@ -1,0 +1,92 @@
+---
+import { hrefForLocale, localeList, type LocaleContent } from "../content";
+
+interface Props { content: LocaleContent; }
+const { content } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const asset = (name: string) => `${base}assets/${name}`;
+const headingLines = (value: string) => value.split("\n");
+const demoApps = [
+  ["Google Chrome", "apps/googlechrome.svg"],
+  ["Visual Studio Code", "apps/visualstudiocode.svg"],
+  ["Firefox", "apps/firefox.svg"],
+  ["Obsidian", "apps/obsidian.svg"],
+  ["Notion", "apps/notion.svg"],
+  ["Slack", "apps/slack.svg"]
+];
+---
+<a class="skip-link" href="#main-content">{content.nav.skip}</a>
+<header class="site-header wrap">
+  <a class="logo" href={hrefForLocale(content, base)} aria-label="PinLaunch">
+    <img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" />
+    <span>PinLaunch</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="#how">{content.nav.how}</a>
+    <a href="#features">{content.nav.features}</a>
+    <a href="#privacy">{content.nav.privacy}</a>
+  </nav>
+  <div class="language-menu">
+    <span class="language-label">{content.nav.language}</span>
+    {localeList.map((locale) => <a class:list={["language-link", { current: locale.code === content.code }]} href={hrefForLocale(locale, base)} hreflang={locale.code} lang={locale.code} aria-current={locale.code === content.code ? "page" : undefined}>{locale.nativeName}</a>)}
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <p class="eyebrow reveal">{content.hero.eyebrow}</p>
+        <h1 class="reveal" id="hero-title">{content.hero.title}<br /><em>{content.hero.emphasis}</em></h1>
+        <p class="hero-copy reveal">{content.hero.lead}</p>
+        <div class="hero-actions reveal">
+          <p class="availability">{content.hero.availability}</p>
+          <small>{content.hero.platform}</small>
+        </div>
+        <ul class="hero-points reveal">
+          {content.hero.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+      <div class="stage reveal" data-demo aria-label={content.hero.demoLabel}>
+        <div class="launcher" id="pinlaunch-demo-menu" role="menu" aria-label={content.hero.menuTitle} hidden>
+          <div class="launcher-top"><span>PinLaunch</span><button class="mini-action" type="button" data-demo-close aria-label={content.hero.closeMenu}>×</button></div>
+          <div class="menu-list">
+            {demoApps.map(([name, icon]) => <button class="menu-app" type="button" role="menuitem" data-demo-item><img src={asset(icon)} width="19" height="19" alt="" /><span>{name}</span></button>)}
+          </div>
+          <p class="demo-selection" aria-live="polite"></p>
+        </div>
+        <div class="demo-taskbar"><button class="taskbar-launch" type="button" data-demo-toggle aria-expanded="false" aria-controls="pinlaunch-demo-menu" aria-label={content.hero.openMenu}><img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" /></button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip"><div class="wrap strip-items">{content.strip.map((item) => <span>{item}</span>)}</div></div>
+
+  <section id="how" aria-labelledby="how-title"><div class="wrap">
+    <div class="intro"><p class="eyebrow">{content.problem.eyebrow}</p><div><h2 id="how-title">{headingLines(content.problem.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.problem.lead}</p></div></div>
+    <div class="flow">{content.problem.steps.map((step) => <article class="flow-row"><span class="flow-num">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
+  </div></section>
+
+  <section class="feature-zone" id="features" aria-labelledby="features-title"><div class="wrap">
+    <div class="feature-head"><div><p class="eyebrow">{content.features.eyebrow}</p><h2 id="features-title">{headingLines(content.features.title).map((line) => <><span>{line}</span><br /></>)}</h2></div><p>{content.features.lead}</p></div>
+    <div class="feature-list">{content.features.items.map((item) => <article class="feature"><span class="feature-n">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+  </div></section>
+
+  <section class="privacy" id="privacy" aria-labelledby="privacy-title"><div class="wrap privacy-box">
+    <div class="privacy-copy"><p class="eyebrow">{content.privacy.eyebrow}</p><h2 id="privacy-title">{headingLines(content.privacy.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.privacy.lead}</p><ul class="privacy-list">{content.privacy.items.map((item) => <li>{item}</li>)}</ul></div>
+    <div class="privacy-art" role="img" aria-label={content.privacy.artLabel}><div class="lock" aria-hidden="true"><span>⌁</span></div></div>
+  </div></section>
+
+  <section aria-labelledby="settings-title"><div class="wrap settings">
+    <div class="settings-copy"><p class="eyebrow">{content.settings.eyebrow}</p><h2 id="settings-title">{headingLines(content.settings.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.settings.lead}</p></div>
+    <div class="setting-sheet" aria-label={content.settings.sheetTitle}><p class="sheet-title">{content.settings.sheetTitle}</p>{content.settings.rows.map((row) => <div class="setting-line"><span>{row.label}</span>{row.enabled ? <span class="switch" aria-label={row.value}><b></b></span> : <span class="select">{row.value}<span aria-hidden="true">⌄</span></span>}</div>)}</div>
+  </div></section>
+
+  <section class="closing" aria-labelledby="closing-title"><div class="wrap">
+    <div class="closing-inner"><div><p class="eyebrow">{content.closing.eyebrow}</p><h2 id="closing-title">{headingLines(content.closing.title).map((line) => <><span>{line}</span><br /></>)}</h2></div><div><p>{content.closing.lead}</p><p class="closing-availability">{content.closing.availability}</p></div></div>
+    <footer><p>{content.footer.copyright}</p><p><a href="#privacy">{content.footer.privacy}</a><span aria-hidden="true"> · </span><a href="#features">{content.footer.features}</a></p></footer>
+  </div></section>
+</main>
+<script>
+  import "../scripts/demo.ts";
+</script>

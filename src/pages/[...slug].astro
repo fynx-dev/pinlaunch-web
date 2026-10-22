@@ -1,0 +1,18 @@
+---
+import LandingPage from "../components/LandingPage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { localeList, locales, type LocaleCode } from "../content";
+
+export function getStaticPaths() {
+  return localeList.map((locale) => ({
+    params: { slug: locale.path || undefined },
+    props: { locale: locale.code }
+  }));
+}
+
+const { locale } = Astro.props as { locale: LocaleCode };
+const content = locales[locale];
+---
+<BaseLayout {content}>
+  <LandingPage {content} />
+</BaseLayout>

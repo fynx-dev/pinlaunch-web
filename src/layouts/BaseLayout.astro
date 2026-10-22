@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import { defaultLocale, hrefForLocale, localeList, type LocaleContent } from "../content";
+
+interface Props { content: LocaleContent; }
+const { content } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const siteUrl = Astro.site ?? Astro.url;
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+const image = new URL(`${base}assets/pinlaunch-icon.svg`, siteUrl).href;
+const alternateLinks = localeList.map((locale) => ({ locale, href: new URL(hrefForLocale(locale, base), siteUrl).href }));
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "PinLaunch",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Windows 10 version 1809 or later; Windows 11; x64",
+  inLanguage: content.code,
+  description: content.meta.description,
+  url: canonical
+};
+---
+<!doctype html>
+<html lang={content.code} dir={content.direction}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={content.meta.description} />
+    <meta name="theme-color" content="#18212d" />
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" href={`${base}assets/pinlaunch-icon.svg`} type="image/svg+xml" />
+    <link rel="alternate icon" href={`${base}assets/pinlaunch-icon.ico`} />
+    <link rel="canonical" href={canonical} />
+    {alternateLinks.map(({ locale, href }) => <link rel="alternate" hreflang={locale.code} href={href} />)}
+    <link rel="alternate" hreflang="x-default" href={alternateLinks.find(({ locale }) => locale.code === defaultLocale)?.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PinLaunch" />
+    <meta property="og:locale" content={content.code.replace("-", "_")} />
+    <meta property="og:title" content={content.meta.socialTitle} />
+    <meta property="og:description" content={content.meta.socialDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={content.meta.socialTitle} />
+    <meta name="twitter:description" content={content.meta.socialDescription} />
+    <meta name="twitter:image" content={image} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    <title>{content.meta.title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
