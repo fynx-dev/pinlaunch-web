@@ -26,8 +26,8 @@ button, input { font: inherit; }
 button { cursor: pointer; }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: var(--display); letter-spacing: -.065em; line-height: .98; }
-h1 { margin-bottom: 0; font-size: clamp(2.85rem, 5.8vw, 5.35rem); }
-h2 { margin-bottom: 0; font-size: clamp(2.15rem, 3.9vw, 3.65rem); }
+h1 { margin-bottom: 0; font-size: clamp(2.55rem, 5.15vw, 4.75rem); }
+h2 { margin-bottom: 0; font-size: clamp(1.95rem, 3.45vw, 3.2rem); }
 h3 { margin-bottom: 0; }
 .wrap { width: min(var(--wrap), calc(100% - 48px)); margin-inline: auto; }
 .skip-link { position: fixed; z-index: 20; top: .75rem; left: .75rem; padding: .6rem .9rem; color: var(--paper); background: var(--ink); transform: translateY(-180%); }
@@ -124,7 +124,7 @@ footer p { margin: 0; }
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(330px, .85fr); }
-  .hero h1 { font-size: clamp(2.8rem, 6vw, 4.5rem); }
+  .hero h1 { font-size: clamp(2.55rem, 5.3vw, 4rem); }
   .nav-links { display: none; }
   .intro { gap: 3rem; }
 }
@@ -143,7 +143,7 @@ footer p { margin: 0; }
 @media (max-width: 450px) {
   .language-menu { gap: 0; }
   .language-link { padding-inline: .32rem; }
-  .hero h1 { font-size: clamp(3rem, 15vw, 4rem); }
+  .hero h1 { font-size: clamp(2.45rem, 13.5vw, 3.55rem); }
   .hero-actions { display: grid; }
   .availability { width: 100%; }
   .stage { min-height: 360px; }
