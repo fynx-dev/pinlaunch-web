@@ -37,7 +37,7 @@ English deliberately remains the default root route. Use a BCP 47 path such as `
 
 The included workflow builds the Astro project and deploys only `dist/` through the official GitHub Pages actions. Before the first deployment, set **Settings → Pages → Source** to **GitHub Actions**.
 
-The default production configuration targets the repository project page at `https://fynx-dev.github.io/pinlaunch-web/`. For a custom domain or a differently named project site, set `SITE_URL` and `BASE_PATH` consistently for the local build and deployment, then verify canonical URLs, alternate links, `robots.txt`, and sitemap locations in `dist/` before publishing.
+The default production configuration targets the configured custom domain, `https://pinlaunch.fynxlab.com/`. For a different custom domain or project site, set `SITE_URL` and `BASE_PATH` consistently for the local build and deployment, then verify canonical URLs, alternate links, `robots.txt`, and sitemap locations in `dist/` before publishing.
 
 ## Product accuracy
 
