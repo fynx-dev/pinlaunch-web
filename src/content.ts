@@ -22,17 +22,17 @@ export const locales: Record<LocaleCode, LocaleContent> = {
   en: {
     code: "en", path: "", name: "English", nativeName: "English", direction: "ltr",
     meta: {
-      title: "PinLaunch — One icon. Your workflow, ready.",
+      title: "PinLaunch — Launch your apps, fast.",
       description: "PinLaunch is a local-first Windows taskbar launcher for the apps, folders, documents, websites, commands, and supported PWAs you use every day.",
-      socialTitle: "PinLaunch — One icon. Your workflow, ready.",
+      socialTitle: "PinLaunch — Launch your apps, fast.",
       socialDescription: "A local-first, configurable taskbar launcher for Windows."
     },
     nav: { how: "How it works", features: "Features", privacy: "Privacy", language: "Language", skip: "Skip to content" },
     hero: {
-      eyebrow: "Local-first launcher for Windows", title: "One icon.", emphasis: "Your workflow, ready.",
+      eyebrow: "Local-first launcher for Windows", title: "One icon.", emphasis: "Launch your apps, fast.",
       lead: "Bring the apps, folders, documents, websites, commands, and PWAs you reach for into one focused menu on your taskbar.",
       availability: "Public download will be available after Microsoft Store certification.", platform: "Windows 10 version 1809+ and Windows 11, x64.",
-      points: ["Works offline", "English and Simplified Chinese", "No account required"], demoLabel: "Interactive PinLaunch taskbar menu demonstration", openMenu: "Open the PinLaunch demo menu", closeMenu: "Close the demo menu", menuTitle: "PinLaunch demo menu"
+      points: ["Works offline", "English, Japanese, and Simplified Chinese", "No account required"], demoLabel: "Interactive PinLaunch taskbar menu demonstration", openMenu: "Open the PinLaunch demo menu", closeMenu: "Close the demo menu", menuTitle: "PinLaunch demo menu"
     },
     strip: ["Windows apps", "Folders & documents", "Websites & commands", "Chrome · Edge · Firefox PWAs"],
     problem: {
@@ -70,13 +70,13 @@ export const locales: Record<LocaleCode, LocaleContent> = {
   ja: {
     code: "ja", path: "ja", name: "Japanese", nativeName: "日本語", direction: "ltr",
     meta: {
-      title: "PinLaunch — ひとつのアイコンで、いつもの作業をすぐに",
+      title: "PinLaunch — アプリをすばやく起動",
       description: "PinLaunch は、よく使うアプリ、フォルダー、文書、Web サイト、コマンド、対応 PWA をタスクバー上のひとつのメニューにまとめる、Windows 向けローカルファーストランチャーです。",
-      socialTitle: "PinLaunch — ひとつのアイコンで、いつもの作業をすぐに", socialDescription: "Windows 向けのローカルファーストでカスタマイズ可能なタスクバーランチャー。"
+      socialTitle: "PinLaunch — アプリをすばやく起動", socialDescription: "Windows 向けのローカルファーストでカスタマイズ可能なタスクバーランチャー。"
     },
     nav: { how: "使い方", features: "機能", privacy: "プライバシー", language: "言語", skip: "メイン コンテンツへ移動" },
     hero: {
-      eyebrow: "Windows 向けローカルファーストランチャー", title: "ひとつのアイコンで、", emphasis: "いつもの作業をすぐに。",
+      eyebrow: "Windows 向けローカルファーストランチャー", title: "ひとつのアイコンで、", emphasis: "アプリをすばやく起動。",
       lead: "毎日使うアプリ、フォルダー、文書、Web サイト、コマンド、PWA を、タスクバーのひとつの使いやすいメニューにまとめます。",
       availability: "Microsoft Store の認定後に公開ダウンロードを提供予定です。", platform: "Windows 10 バージョン 1809 以降、Windows 11、x64 に対応。",
       points: ["オフラインで利用可能", "英語・日本語・簡体字中国語に対応", "アカウント不要"], demoLabel: "操作できる PinLaunch タスクバーメニューのデモ", openMenu: "PinLaunch のデモメニューを開く", closeMenu: "デモメニューを閉じる", menuTitle: "PinLaunch デモメニュー"
@@ -117,16 +117,16 @@ export const locales: Record<LocaleCode, LocaleContent> = {
   "zh-CN": {
     code: "zh-CN", path: "zh-CN", name: "Simplified Chinese", nativeName: "简体中文", direction: "ltr",
     meta: {
-      title: "PinLaunch — 一枚图标，启动你的工作流",
+      title: "PinLaunch — 快速启动你的应用",
       description: "PinLaunch 是一款为 Windows 打造的本地优先任务栏启动工具，将常用应用、文件夹、文档、网站、命令和受支持的 PWA 集中到一个菜单中。",
-      socialTitle: "PinLaunch — 一枚图标，启动你的工作流", socialDescription: "为 Windows 打造的本地优先、可配置任务栏启动工具。"
+      socialTitle: "PinLaunch — 快速启动你的应用", socialDescription: "为 Windows 打造的本地优先、可配置任务栏启动工具。"
     },
     nav: { how: "如何工作", features: "功能", privacy: "隐私", language: "语言", skip: "跳到主要内容" },
     hero: {
-      eyebrow: "为 Windows 打造的本地优先启动工具", title: "一枚图标，", emphasis: "启动你的工作流。",
+      eyebrow: "为 Windows 打造的本地优先启动工具", title: "一枚图标，", emphasis: "快速启动你的应用。",
       lead: "把每天需要的应用、文件夹、文档、网站、命令与 PWA，收进任务栏里一个真正属于你的入口。",
       availability: "将在通过 Microsoft Store 认证后提供公开下载。", platform: "适用于 Windows 10 1809 及更高版本和 Windows 11，仅限 x64。",
-      points: ["离线可用", "支持英文与简体中文", "无需账号"], demoLabel: "可交互的 PinLaunch 任务栏菜单演示", openMenu: "打开 PinLaunch 演示菜单", closeMenu: "关闭演示菜单", menuTitle: "PinLaunch 演示菜单"
+      points: ["离线可用", "支持英文、日语与简体中文", "无需账号"], demoLabel: "可交互的 PinLaunch 任务栏菜单演示", openMenu: "打开 PinLaunch 演示菜单", closeMenu: "关闭演示菜单", menuTitle: "PinLaunch 演示菜单"
     },
     strip: ["Windows 应用", "文件夹与文档", "网站与命令", "Chrome · Edge · Firefox PWA"],
     problem: {

@@ -24,7 +24,6 @@ const demoApps = [
   </a>
   <nav class="nav-links" aria-label="Primary navigation">
     <a href="#how">{content.nav.how}</a>
-    <a href="#features">{content.nav.features}</a>
     <a href="#privacy">{content.nav.privacy}</a>
   </nav>
   <div class="language-menu">
@@ -48,14 +47,14 @@ const demoApps = [
         </ul>
       </div>
       <div class="stage reveal" data-demo aria-label={content.hero.demoLabel}>
-        <div class="launcher" id="pinlaunch-demo-menu" role="menu" aria-label={content.hero.menuTitle} hidden>
+        <div class="launcher" id="pinlaunch-demo-menu" role="menu" aria-label={content.hero.menuTitle}>
           <div class="launcher-top"><span>PinLaunch</span><button class="mini-action" type="button" data-demo-close aria-label={content.hero.closeMenu}>×</button></div>
           <div class="menu-list">
             {demoApps.map(([name, icon]) => <button class="menu-app" type="button" role="menuitem" data-demo-item><img src={asset(icon)} width="19" height="19" alt="" /><span>{name}</span></button>)}
           </div>
           <p class="demo-selection" aria-live="polite"></p>
         </div>
-        <div class="demo-taskbar"><button class="taskbar-launch" type="button" data-demo-toggle aria-expanded="false" aria-controls="pinlaunch-demo-menu" aria-label={content.hero.openMenu}><img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" /></button></div>
+        <div class="demo-taskbar"><button class="taskbar-launch is-active" type="button" data-demo-toggle aria-expanded="true" aria-controls="pinlaunch-demo-menu" aria-label={content.hero.openMenu}><img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" /></button></div>
       </div>
     </div>
   </section>
@@ -64,27 +63,17 @@ const demoApps = [
 
   <section id="how" aria-labelledby="how-title"><div class="wrap">
     <div class="intro"><p class="eyebrow">{content.problem.eyebrow}</p><div><h2 id="how-title">{headingLines(content.problem.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.problem.lead}</p></div></div>
-    <div class="flow">{content.problem.steps.map((step) => <article class="flow-row"><span class="flow-num">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
-  </div></section>
-
-  <section class="feature-zone" id="features" aria-labelledby="features-title"><div class="wrap">
-    <div class="feature-head"><div><p class="eyebrow">{content.features.eyebrow}</p><h2 id="features-title">{headingLines(content.features.title).map((line) => <><span>{line}</span><br /></>)}</h2></div><p>{content.features.lead}</p></div>
-    <div class="feature-list">{content.features.items.map((item) => <article class="feature"><span class="feature-n">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+    <div class="flow">{content.problem.steps.map((step) => <article class="flow-row"><div class="flow-heading"><span class="flow-num">{step.number}</span><h3>{step.title}</h3></div><p>{step.text}</p></article>)}</div>
   </div></section>
 
   <section class="privacy" id="privacy" aria-labelledby="privacy-title"><div class="wrap privacy-box">
     <div class="privacy-copy"><p class="eyebrow">{content.privacy.eyebrow}</p><h2 id="privacy-title">{headingLines(content.privacy.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.privacy.lead}</p><ul class="privacy-list">{content.privacy.items.map((item) => <li>{item}</li>)}</ul></div>
-    <div class="privacy-art" role="img" aria-label={content.privacy.artLabel}><div class="lock" aria-hidden="true"><span>⌁</span></div></div>
-  </div></section>
-
-  <section aria-labelledby="settings-title"><div class="wrap settings">
-    <div class="settings-copy"><p class="eyebrow">{content.settings.eyebrow}</p><h2 id="settings-title">{headingLines(content.settings.title).map((line) => <><span>{line}</span><br /></>)}</h2><p>{content.settings.lead}</p></div>
-    <div class="setting-sheet" aria-label={content.settings.sheetTitle}><p class="sheet-title">{content.settings.sheetTitle}</p>{content.settings.rows.map((row) => <div class="setting-line"><span>{row.label}</span>{row.enabled ? <span class="switch" aria-label={row.value}><b></b></span> : <span class="select">{row.value}<span aria-hidden="true">⌄</span></span>}</div>)}</div>
+    <div class="privacy-art" role="img" aria-label={content.privacy.artLabel}><div class="privacy-device" aria-hidden="true"><span class="privacy-device-bar"></span><div class="privacy-device-lock"><span></span></div></div></div>
   </div></section>
 
   <section class="closing" aria-labelledby="closing-title"><div class="wrap">
     <div class="closing-inner"><div><p class="eyebrow">{content.closing.eyebrow}</p><h2 id="closing-title">{headingLines(content.closing.title).map((line) => <><span>{line}</span><br /></>)}</h2></div><div><p>{content.closing.lead}</p><p class="closing-availability">{content.closing.availability}</p></div></div>
-    <footer><p>{content.footer.copyright}</p><p><a href="#privacy">{content.footer.privacy}</a><span aria-hidden="true"> · </span><a href="#features">{content.footer.features}</a></p></footer>
+    <footer><p>{content.footer.copyright}</p><p><a href="#privacy">{content.footer.privacy}</a></p></footer>
   </div></section>
 </main>
 <script>
