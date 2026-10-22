@@ -1,3 +1,6 @@
+const languageSelect = document.querySelector<HTMLSelectElement>("[data-language-select]");
+languageSelect?.addEventListener("change", () => { window.location.assign(languageSelect.value); });
+
 const root = document.querySelector<HTMLElement>("[data-demo]");
 
 if (root) {

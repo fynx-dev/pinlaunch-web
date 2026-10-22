@@ -26,10 +26,12 @@ const demoApps = [
     <a href="#how">{content.nav.how}</a>
     <a href="#privacy">{content.nav.privacy}</a>
   </nav>
-  <div class="language-menu">
+  <label class="language-menu">
     <span class="language-label">{content.nav.language}</span>
-    {localeList.map((locale) => <a class:list={["language-link", { current: locale.code === content.code }]} href={hrefForLocale(locale, base)} hreflang={locale.code} lang={locale.code} aria-current={locale.code === content.code ? "page" : undefined}>{locale.nativeName}</a>)}
-  </div>
+    <select class="language-select" data-language-select aria-label={content.nav.language}>
+      {localeList.map((locale) => <option value={hrefForLocale(locale, base)} lang={locale.code} selected={locale.code === content.code}>{locale.nativeName}</option>)}
+    </select>
+  </label>
 </header>
 <main id="main-content">
   <section class="hero" aria-labelledby="hero-title">
