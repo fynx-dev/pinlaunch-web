@@ -1,8 +1,8 @@
-export type LocaleCode = "en" | "zh-CN";
+export type LocaleCode = "en" | "ja" | "zh-CN";
 
 export type LocaleContent = {
   code: LocaleCode;
-  path: "" | "zh-CN";
+  path: "" | "ja" | "zh-CN";
   name: string;
   nativeName: string;
   direction: "ltr";
@@ -66,6 +66,53 @@ export const locales: Record<LocaleCode, LocaleContent> = {
     },
     closing: { eyebrow: "Ready when you are", title: "Make the tools you use\nshow up faster.", lead: "PinLaunch is built for x64 Windows 10 version 1809 and later, and Windows 11.", availability: "Public download is coming after Microsoft Store certification." },
     footer: { copyright: "© 2026 PinLaunch. A local-first Windows launcher.", privacy: "Privacy promise", features: "Features" }
+  },
+  ja: {
+    code: "ja", path: "ja", name: "Japanese", nativeName: "日本語", direction: "ltr",
+    meta: {
+      title: "PinLaunch — ひとつのアイコンで、いつもの作業をすぐに",
+      description: "PinLaunch は、よく使うアプリ、フォルダー、文書、Web サイト、コマンド、対応 PWA をタスクバー上のひとつのメニューにまとめる、Windows 向けローカルファーストランチャーです。",
+      socialTitle: "PinLaunch — ひとつのアイコンで、いつもの作業をすぐに", socialDescription: "Windows 向けのローカルファーストでカスタマイズ可能なタスクバーランチャー。"
+    },
+    nav: { how: "使い方", features: "機能", privacy: "プライバシー", language: "言語", skip: "メイン コンテンツへ移動" },
+    hero: {
+      eyebrow: "Windows 向けローカルファーストランチャー", title: "ひとつのアイコンで、", emphasis: "いつもの作業をすぐに。",
+      lead: "毎日使うアプリ、フォルダー、文書、Web サイト、コマンド、PWA を、タスクバーのひとつの使いやすいメニューにまとめます。",
+      availability: "Microsoft Store の認定後に公開ダウンロードを提供予定です。", platform: "Windows 10 バージョン 1809 以降、Windows 11、x64 に対応。",
+      points: ["オフラインで利用可能", "英語・日本語・簡体字中国語に対応", "アカウント不要"], demoLabel: "操作できる PinLaunch タスクバーメニューのデモ", openMenu: "PinLaunch のデモメニューを開く", closeMenu: "デモメニューを閉じる", menuTitle: "PinLaunch デモメニュー"
+    },
+    strip: ["Windows アプリ", "フォルダーと文書", "Web サイトとコマンド", "Chrome · Edge · Firefox PWA"],
+    problem: {
+      eyebrow: "すっきりしたタスクバー。迷わないスタート。", title: "アイコンを増やしすぎず、\nスタートメニューを探し回らない。",
+      lead: "タスクバーがいっぱいだと場所を取り、スタートメニューが長いと探す手間がかかります。PinLaunch には、あなたが選んだよく使う項目だけを残せます。",
+      steps: [
+        { number: "01 / 集約", title: "散らばったアイコンをまとめる", text: "毎日使うアプリ、フォルダー、文書、Web サイト、コマンドをひとつのタスクバー項目に集約します。" },
+        { number: "02 / 厳選", title: "使い慣れた項目だけを残す", text: "インストール済みのすべてのプログラムから探すのではなく、必要なショートカットとアプリだけを選べます。" },
+        { number: "03 / すぐ開く", title: "ワンクリックで起動する", text: "タスクバーから設定済みのメニューを開き、グループと並び順で目的の項目にすばやくアクセスできます。" }
+      ]
+    },
+    features: {
+      eyebrow: "ひとつの入口に、必要なものだけ", title: "いつものツールを\nひとつのメニューに。",
+      lead: "PinLaunch は、タスクバーに並ぶアイコンや長いアプリ一覧を、あなたが実際に使うものを中心にしたメニューへ置き換えます。",
+      items: [
+        { number: "01", title: "よく使う項目をまとめる", text: "複数のタスクバー固定アイコンをひとつのメニューに集めながら、ワンクリックの手軽さは保てます。" },
+        { number: "02", title: "表示する項目を自分で選ぶ", text: "アクセスしたいアプリ、フォルダー、ファイル、Web サイト、コマンドだけを追加できます。" },
+        { number: "03", title: "習慣に合わせて整理する", text: "グループ、並び順、アイコン、表示設定を使って、いつもの起動手順をわかりやすく整えます。" }
+      ]
+    },
+    privacy: {
+      eyebrow: "ローカルファースト、余計な痕跡は残さない", title: "ショートカットは、\nあなたのコンピューターにだけ。",
+      lead: "PinLaunch は設定とショートカットの検出をローカルで処理します。使い方を収集するのではなく、選んだ項目を起動することに専念します。",
+      items: ["テレメトリなし", "広告なし", "サインインアカウント不要", "クラウド同期なし", "自動更新チェックなし"], artLabel: "ローカルプライバシーのイラスト"
+    },
+    settings: {
+      eyebrow: "自分らしく使えるランチャー", title: "起動するだけでなく、\n自分のリズムに合わせる。",
+      lead: "テーマ、メニューサイズ、アイコンスタイルなどの見た目を調整できます。デスクトップに合わせて英語、日本語、簡体字中国語を切り替えることもできます。",
+      sheetTitle: "外観と動作",
+      rows: [{ label: "表示言語", value: "日本語" }, { label: "システムテーマに合わせる", value: "オン", enabled: true }, { label: "メニューのアイコンサイズ", value: "標準" }, { label: "Windows と同時に起動", value: "オン", enabled: true }, { label: "複数のディスプレイに表示", value: "オン", enabled: true }]
+    },
+    closing: { eyebrow: "始める準備はできましたか", title: "いつものツールを、\nもっと速く。", lead: "PinLaunch は x64 の Windows 10 バージョン 1809 以降と Windows 11 向けに作られています。", availability: "Microsoft Store の認定後に公開ダウンロードを提供予定です。" },
+    footer: { copyright: "© 2026 PinLaunch. Windows 向けローカルファーストランチャー。", privacy: "プライバシーについて", features: "機能一覧" }
   },
   "zh-CN": {
     code: "zh-CN", path: "zh-CN", name: "Simplified Chinese", nativeName: "简体中文", direction: "ltr",
