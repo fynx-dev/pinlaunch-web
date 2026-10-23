@@ -95,6 +95,22 @@ section { padding: clamp(4.9rem, 10vw, 7.5rem) 0; }
 .flow-row h3 { font-size: clamp(1.3rem, 1.7vw, 1.55rem); letter-spacing: -.045em; }
 .flow-row p { max-width: 43rem; margin: 0; color: var(--muted); }
 
+.policy-page { padding: clamp(3.5rem, 8vw, 6.25rem) 0 clamp(4rem, 9vw, 7rem); }
+.policy { width: min(760px, calc(100% - 48px)); }
+.policy h1 { max-width: 13ch; margin-bottom: 1.65rem; font-size: clamp(2.35rem, 5vw, 4.5rem); }
+.policy-date { display: flex; flex-wrap: wrap; gap: .4rem .85rem; margin: 0 0 2rem; padding: .85rem 1rem; border-left: 3px solid var(--blue); color: #405064; background: var(--bright); font-size: .9rem; }
+.policy-date strong { color: var(--ink); }
+.policy-intro { max-width: 42rem; margin: 0; color: var(--muted); font-size: clamp(1.08rem, 1.55vw, 1.2rem); }
+.policy-sections { margin-top: 3.5rem; }
+.policy-sections section { padding: 1.8rem 0; border-top: 1px solid var(--rule); }
+.policy-sections h2 { margin-bottom: 1rem; font-size: clamp(1.45rem, 2.4vw, 2rem); letter-spacing: -.045em; }
+.policy-sections p { max-width: 45rem; margin: 0; color: #43566a; }
+.policy-sections p + p { margin-top: .95rem; }
+.policy-sections a { color: var(--blue-deep); font-weight: 720; }
+.policy-back { display: inline-flex; margin-top: 1.6rem; color: var(--blue-deep); font-weight: 750; text-decoration-thickness: 2px; }
+.policy-footer { display: flex; justify-content: space-between; gap: 24px; padding: 1.5rem 0; color: #536578; border-top: 1px solid var(--rule); font-size: .81rem; }
+.policy-footer p { margin: 0; }
+
 .closing .eyebrow { color: var(--lime); }
 
 .privacy { padding: 0; }
@@ -153,8 +169,8 @@ footer p { margin: 0; }
   .availability { width: 100%; }
   .stage { min-height: 360px; }
   .launcher { width: calc(100% - 32px); }
-  footer { display: block; }
-  footer p + p { margin-top: .7rem; }
+  footer, .policy-footer { display: block; }
+  footer p + p, .policy-footer p + p { margin-top: .7rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

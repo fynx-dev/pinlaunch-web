@@ -169,3 +169,7 @@ export const defaultLocale: LocaleCode = "en";
 export function hrefForLocale(locale: LocaleContent, base: string) {
   return `${base}${locale.path ? `${locale.path}/` : ""}`;
 }
+
+export function privacyHrefForLocale(locale: LocaleContent, base: string) {
+  return `${hrefForLocale(locale, base)}privacy/`;
+}

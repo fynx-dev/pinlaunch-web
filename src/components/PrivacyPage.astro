@@ -1,0 +1,41 @@
+---
+import { hrefForLocale, localeList, privacyHrefForLocale, type LocaleContent } from "../content";
+import { privacyPolicies } from "../privacy";
+
+interface Props { content: LocaleContent; }
+const { content } = Astro.props;
+const policy = privacyPolicies[content.code];
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+const asset = (name: string) => `${base}assets/${name}`;
+---
+<a class="skip-link" href="#policy-content">{content.nav.skip}</a>
+<header class="site-header wrap">
+  <a class="logo" href={hrefForLocale(content, base)} aria-label="PinLaunch">
+    <img src={asset("pinlaunch-icon.svg")} width="32" height="32" alt="" />
+    <span>PinLaunch</span>
+  </a>
+  <label class="language-menu">
+    <span class="language-label">{content.nav.language}</span>
+    <select class="language-select" data-language-select aria-label={content.nav.language}>
+      {localeList.map((locale) => <option value={privacyHrefForLocale(locale, base)} lang={locale.code} selected={locale.code === content.code}>{locale.nativeName}</option>)}
+    </select>
+  </label>
+</header>
+<main id="policy-content" class="policy-page">
+  <article class="policy wrap">
+    <p class="eyebrow">{policy.eyebrow}</p>
+    <h1>{policy.title}</h1>
+    <p class="policy-date"><strong>{policy.effectiveDateLabel}</strong><span>{policy.effectiveDate}</span></p>
+    <p class="policy-intro">{policy.intro}</p>
+    <div class="policy-sections">
+      {policy.sections.map((section) => <section><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</section>)}
+      <section><h2>{policy.contact.title}</h2><p>{policy.contact.text} <a href={`mailto:${policy.contact.emailLabel}`}>{policy.contact.emailLabel}</a>.</p></section>
+    </div>
+    <a class="policy-back" href={hrefForLocale(content, base)}>← {policy.backToHome}</a>
+  </article>
+</main>
+<footer class="policy-footer wrap"><p>{content.footer.copyright}</p><p><a href={hrefForLocale(content, base)}>{policy.backToHome}</a></p></footer>
+<script>
+  import "../scripts/demo.ts";
+</script>

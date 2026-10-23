@@ -1,5 +1,5 @@
 ---
-import { hrefForLocale, localeList, type LocaleContent } from "../content";
+import { hrefForLocale, localeList, privacyHrefForLocale, type LocaleContent } from "../content";
 
 interface Props { content: LocaleContent; }
 const { content } = Astro.props;
@@ -24,7 +24,7 @@ const demoApps = [
   </a>
   <nav class="nav-links" aria-label="Primary navigation">
     <a href="#how">{content.nav.how}</a>
-    <a href="#privacy">{content.nav.privacy}</a>
+    <a href={privacyHrefForLocale(content, base)}>{content.nav.privacy}</a>
   </nav>
   <label class="language-menu">
     <span class="language-label">{content.nav.language}</span>
@@ -75,7 +75,7 @@ const demoApps = [
 
   <section class="closing" aria-labelledby="closing-title"><div class="wrap">
     <div class="closing-inner"><div><p class="eyebrow">{content.closing.eyebrow}</p><h2 id="closing-title">{headingLines(content.closing.title).map((line) => <><span>{line}</span><br /></>)}</h2></div><div><p>{content.closing.lead}</p><p class="closing-availability">{content.closing.availability}</p></div></div>
-    <footer><p>{content.footer.copyright}</p><p><a href="#privacy">{content.footer.privacy}</a></p></footer>
+    <footer><p>{content.footer.copyright}</p><p><a href={privacyHrefForLocale(content, base)}>{content.footer.privacy}</a></p></footer>
   </div></section>
 </main>
 <script>
